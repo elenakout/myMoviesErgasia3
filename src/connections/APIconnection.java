@@ -28,6 +28,7 @@ public class APIconnection {
     public static final String api_key = "b59af98651d790c970eaec576c0be18a";
     URL genres_url;
     URL url;
+    int page = 1;
     EntityManagerFactory emf = Persistence.createEntityManagerFactory("myMovies_testPU");
     GenreJpaController gjc = new GenreJpaController(emf);
     Genre genre = new Genre();
@@ -39,7 +40,7 @@ public class APIconnection {
     public APIconnection() { 
         try {
             this.genres_url = new URL(baseURL + "genre/movie/list?api_key=" + api_key + "&language=en-US");
-            this.url = new URL( baseURL + "discover/movie?api_key=" + api_key +"&language=en-US&sort_by=popularity.desc&release_date.gte=2000&with_genres=28%7C878%7C10749");
+            this.url = new URL( baseURL + "discover/movie?api_key=" + api_key +"&language=en-US&sort_by=popularity.desc&release_date.gte=2000&with_genres=28%7C878%7C10749&page=" + page);
         } catch (MalformedURLException ex) {
             Logger.getLogger(APIconnection.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -72,8 +73,13 @@ public class APIconnection {
     }
     
     public void getMovies() throws ParseException{
-
-        try (InputStream is = url.openStream();
+        for (int i = 1; i<77; i++){
+            try {
+                this.url = new URL( baseURL + "discover/movie?api_key=" + api_key +"&language=en-US&sort_by=popularity.desc&release_date.gte=2000&with_genres=28%7C878%7C10749&page=" + i);
+            } catch (MalformedURLException ex) {
+                Logger.getLogger(APIconnection.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            try (InputStream is = url.openStream();
                 JsonReader rdr = Json.createReader(is)) {
 
             JsonObject obj = rdr.readObject();
@@ -103,6 +109,9 @@ public class APIconnection {
             }
         } catch (IOException ex) {
         }
+            
+        }
+        
     }
   
     protected Genre one_id(JsonArray arr){ 
