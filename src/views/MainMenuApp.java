@@ -788,6 +788,7 @@ public class MainMenuApp extends javax.swing.JFrame {
         this.jtfselectedYear.setText(null);
         this.jpTableMovies.setVisible(false);
         this.labelNoCriteria.setVisible(false);
+        this.bindGenreComboBox();
        
     }//GEN-LAST:event_btnDiscoverMoviesActionPerformed
 
