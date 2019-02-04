@@ -14,10 +14,8 @@ import java.text.ParseException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.table.DefaultTableModel;
@@ -779,6 +777,8 @@ public class MainMenuApp extends javax.swing.JFrame {
 
     private void btnDiscoverMoviesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDiscoverMoviesActionPerformed
         // TODO add your handling code here:
+        this.bindGenreComboBox();
+        this.bindFaforiteListComboBox();
         this.jpSearchMovies.setVisible(true);
         this.jpListmanage.setVisible(false);
         this.jpStart.setVisible(false);
@@ -788,8 +788,6 @@ public class MainMenuApp extends javax.swing.JFrame {
         this.jtfselectedYear.setText(null);
         this.jpTableMovies.setVisible(false);
         this.labelNoCriteria.setVisible(false);
-        this.bindGenreComboBox();
-       
     }//GEN-LAST:event_btnDiscoverMoviesActionPerformed
 
     private void btnMoviesStatisticsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoviesStatisticsActionPerformed
@@ -850,10 +848,8 @@ public class MainMenuApp extends javax.swing.JFrame {
 
     private void btnEditListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditListActionPerformed
         // TODO add your handling code here:
-        
         FavoriteListJpaController fjc = new FavoriteListJpaController(emf);
-        FavoriteList favList = new FavoriteList();
-        favList = fjc.findFavoriteList(this.selectedListId);
+        FavoriteList favList = fjc.findFavoriteList(this.selectedListId);
         favList.setName(this.jtfChangeName.getText());
         try {
             fjc.edit(favList);
@@ -880,8 +876,7 @@ public class MainMenuApp extends javax.swing.JFrame {
     private void jlFavoriteListMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlFavoriteListMouseClicked
         // TODO add your handling code here:
         this.btnShowEditList.setEnabled(true);
-        FavoriteList favList = new FavoriteList();
-        favList = (FavoriteList) this.jlFavoriteList.getSelectedValue();
+        FavoriteList favList = (FavoriteList) this.jlFavoriteList.getSelectedValue();
         this.selectedListId = favList.getId();
         this.btnShowDeleteValidation.setEnabled(true);
         
