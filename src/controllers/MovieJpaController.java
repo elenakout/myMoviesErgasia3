@@ -233,7 +233,6 @@ public class MovieJpaController implements Serializable {
             Logger.getLogger(MovieJpaController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        Query query = em.createNamedQuery("Movie.onlyYear").setParameter("year", dt);
         Query query2 = em.createNamedQuery("Movie.betweenYear").setParameter("startDate", dt).setParameter("endDate", endDt);
        
         List<Movie> results = query2.getResultList();
@@ -244,6 +243,16 @@ public class MovieJpaController implements Serializable {
             }
         }            
         return movies;    
+    }
+    
+    public List<Movie> findMovieByList(FavoriteList list){
+        EntityManager em = getEntityManager(); 
+        Query query = em.createNamedQuery("Movie.findByList").setParameter("list", list);
+        
+        List<Movie> results = query.getResultList();
+        //List<Movie> movies = new ArrayList<>();
+       
+        return results;
     }
 
 }

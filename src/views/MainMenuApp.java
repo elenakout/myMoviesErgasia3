@@ -53,8 +53,9 @@ public class MainMenuApp extends javax.swing.JFrame {
     private void initComponents() {
 
         jfLoading = new javax.swing.JFrame();
-        jploading = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jfCreateList = new javax.swing.JFrame();
         jPanel1 = new javax.swing.JPanel();
         jtfNewName = new javax.swing.JTextField();
@@ -91,59 +92,62 @@ public class MainMenuApp extends javax.swing.JFrame {
         tblMoviesFind = new javax.swing.JTable();
         jcbFavoriteListSelection = new javax.swing.JComboBox();
         btnDeleteFromList = new javax.swing.JButton();
-        btnAddToList = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
         jtfselectedYear = new javax.swing.JTextField();
         labelNoCriteria = new javax.swing.JLabel();
         jpListmanage = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jlFavoriteList = new javax.swing.JList();
         btnShowCreateList = new javax.swing.JButton();
         btnShowEditList = new javax.swing.JButton();
         btnShowDeleteValidation = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jlFavoriteList = new javax.swing.JList();
+        jpTableMoviesInList = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tblMoviesInList = new javax.swing.JTable();
         jpStart = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jpStatistika = new javax.swing.JPanel();
 
         jfLoading.setTitle("Loading");
-        jfLoading.setMinimumSize(new java.awt.Dimension(350, 150));
+        jfLoading.setMinimumSize(new java.awt.Dimension(450, 200));
+        jfLoading.setUndecorated(true);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/giphy.gif"))); // NOI18N
+        jLabel10.setText("Η αποθήκευση των ταινιών στη βάση δεδομένων");
 
-        javax.swing.GroupLayout jploadingLayout = new javax.swing.GroupLayout(jploading);
-        jploading.setLayout(jploadingLayout);
-        jploadingLayout.setHorizontalGroup(
-            jploadingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jploadingLayout.createSequentialGroup()
-                .addComponent(jLabel5)
-                .addGap(0, 20, Short.MAX_VALUE))
-        );
-        jploadingLayout.setVerticalGroup(
-            jploadingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jploadingLayout.createSequentialGroup()
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 126, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jLabel11.setText("Ολοκληρωθηκε με επιτυχία!!");
+
+        jButton1.setText("ΟΚ");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jfLoadingLayout = new javax.swing.GroupLayout(jfLoading.getContentPane());
         jfLoading.getContentPane().setLayout(jfLoadingLayout);
         jfLoadingLayout.setHorizontalGroup(
             jfLoadingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 466, Short.MAX_VALUE)
-            .addGroup(jfLoadingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jfLoadingLayout.createSequentialGroup()
-                    .addGap(0, 48, Short.MAX_VALUE)
-                    .addComponent(jploading, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 48, Short.MAX_VALUE)))
+            .addGroup(jfLoadingLayout.createSequentialGroup()
+                .addGap(94, 94, 94)
+                .addGroup(jfLoadingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
         jfLoadingLayout.setVerticalGroup(
             jfLoadingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 255, Short.MAX_VALUE)
-            .addGroup(jfLoadingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jfLoadingLayout.createSequentialGroup()
-                    .addGap(0, 59, Short.MAX_VALUE)
-                    .addComponent(jploading, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 59, Short.MAX_VALUE)))
+            .addGroup(jfLoadingLayout.createSequentialGroup()
+                .addGap(46, 46, 46)
+                .addComponent(jLabel10)
+                .addGap(27, 27, 27)
+                .addComponent(jLabel11)
+                .addGap(36, 36, 36)
+                .addComponent(jButton1)
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         jfCreateList.setTitle("Δημιουργία Λίστας");
@@ -346,7 +350,7 @@ public class MainMenuApp extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnDeleteYes)
                     .addComponent(btnDeleteCancel))
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jfDeleteValidationLayout = new javax.swing.GroupLayout(jfDeleteValidation.getContentPane());
@@ -368,6 +372,7 @@ public class MainMenuApp extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("myMovies");
+        setBackground(new java.awt.Color(124, 124, 172));
 
         jpButtons.setBackground(new java.awt.Color(109, 142, 242));
 
@@ -460,6 +465,11 @@ public class MainMenuApp extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jLayeredPane1.setBackground(new java.awt.Color(167, 167, 255));
+
+        jpSearchMovies.setBackground(new java.awt.Color(167, 167, 255));
+        jpSearchMovies.setMinimumSize(new java.awt.Dimension(550, 530));
+
         jLabel4.setText("Είδος");
 
         jcbGenre.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -500,6 +510,11 @@ public class MainMenuApp extends javax.swing.JFrame {
         jScrollPane2.setViewportView(tblMoviesFind);
 
         jcbFavoriteListSelection.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jcbFavoriteListSelection.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jcbFavoriteListSelectionItemStateChanged(evt);
+            }
+        });
 
         btnDeleteFromList.setText("Διαγραφή από Λίστα");
         btnDeleteFromList.setEnabled(false);
@@ -509,43 +524,36 @@ public class MainMenuApp extends javax.swing.JFrame {
             }
         });
 
-        btnAddToList.setText("Προσθήκη σε Λίστα");
-        btnAddToList.setEnabled(false);
-        btnAddToList.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAddToListActionPerformed(evt);
-            }
-        });
+        jLabel5.setText("Προσθήκη σε Λίστα");
 
         javax.swing.GroupLayout jpTableMoviesLayout = new javax.swing.GroupLayout(jpTableMovies);
         jpTableMovies.setLayout(jpTableMoviesLayout);
         jpTableMoviesLayout.setHorizontalGroup(
             jpTableMoviesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpTableMoviesLayout.createSequentialGroup()
-                .addGroup(jpTableMoviesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE)
-                    .addGroup(jpTableMoviesLayout.createSequentialGroup()
-                        .addGap(145, 145, 145)
-                        .addComponent(jcbFavoriteListSelection, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jpTableMoviesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnAddToList)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnDeleteFromList)
-                .addGap(37, 37, 37))
+                .addGap(22, 22, 22)
+                .addGroup(jpTableMoviesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addGroup(jpTableMoviesLayout.createSequentialGroup()
+                        .addComponent(jcbFavoriteListSelection, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(52, 52, 52)
+                        .addComponent(btnDeleteFromList)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpTableMoviesLayout.setVerticalGroup(
             jpTableMoviesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpTableMoviesLayout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jcbFavoriteListSelection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpTableMoviesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAddToList)
-                    .addComponent(btnDeleteFromList)))
+                    .addComponent(jcbFavoriteListSelection, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnDeleteFromList))
+                .addContainerGap())
         );
 
         labelNoCriteria.setText("   Παρακαλώ εισάγετε κριτήρια αναζήτησης");
@@ -571,8 +579,7 @@ public class MainMenuApp extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel9)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jtfselectedYear, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                            .addComponent(jtfselectedYear, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jpSearchMoviesLayout.createSequentialGroup()
                             .addGap(33, 33, 33)
                             .addComponent(jpTableMovies, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -592,7 +599,7 @@ public class MainMenuApp extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addGap(18, 18, 18)
                 .addComponent(labelNoCriteria)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addGroup(jpSearchMoviesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSearchMovies)
                     .addComponent(btnClearCriteria))
@@ -601,34 +608,24 @@ public class MainMenuApp extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        btnShowCreateList.setText("Δημιουργία Λίστας");
-        btnShowCreateList.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnShowCreateListActionPerformed(evt);
-            }
-        });
+        jpListmanage.setBackground(new java.awt.Color(167, 167, 255));
+        jpListmanage.setMinimumSize(new java.awt.Dimension(550, 530));
+        jpListmanage.setPreferredSize(new java.awt.Dimension(550, 530));
 
-        btnShowEditList.setText("Επεξεργασία Λίστας");
-        btnShowEditList.setEnabled(false);
-        btnShowEditList.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnShowEditListActionPerformed(evt);
-            }
-        });
+        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel12.setText("Διαχείρηση Λιστών");
 
-        btnShowDeleteValidation.setText("Διαγραφή Λίστας");
-        btnShowDeleteValidation.setEnabled(false);
-        btnShowDeleteValidation.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnShowDeleteValidationActionPerformed(evt);
-            }
-        });
+        jScrollPane1.setMinimumSize(new java.awt.Dimension(180, 170));
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(180, 170));
 
         jlFavoriteList.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
+        jlFavoriteList.setMaximumSize(new java.awt.Dimension(180, 170));
+        jlFavoriteList.setMinimumSize(new java.awt.Dimension(180, 170));
+        jlFavoriteList.setPreferredSize(new java.awt.Dimension(180, 170));
         jlFavoriteList.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jlFavoriteListMouseClicked(evt);
@@ -636,39 +633,103 @@ public class MainMenuApp extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jlFavoriteList);
 
+        btnShowCreateList.setText("Δημιουργία");
+        btnShowCreateList.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnShowCreateListActionPerformed(evt);
+            }
+        });
+
+        btnShowEditList.setText("Επεξεργασία");
+        btnShowEditList.setEnabled(false);
+        btnShowEditList.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnShowEditListActionPerformed(evt);
+            }
+        });
+
+        btnShowDeleteValidation.setText("Διαγραφή");
+        btnShowDeleteValidation.setEnabled(false);
+        btnShowDeleteValidation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnShowDeleteValidationActionPerformed(evt);
+            }
+        });
+
+        tblMoviesInList.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane3.setViewportView(tblMoviesInList);
+
+        javax.swing.GroupLayout jpTableMoviesInListLayout = new javax.swing.GroupLayout(jpTableMoviesInList);
+        jpTableMoviesInList.setLayout(jpTableMoviesInListLayout);
+        jpTableMoviesInListLayout.setHorizontalGroup(
+            jpTableMoviesInListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpTableMoviesInListLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(13, Short.MAX_VALUE))
+        );
+        jpTableMoviesInListLayout.setVerticalGroup(
+            jpTableMoviesInListLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpTableMoviesInListLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout jpListmanageLayout = new javax.swing.GroupLayout(jpListmanage);
         jpListmanage.setLayout(jpListmanageLayout);
         jpListmanageLayout.setHorizontalGroup(
             jpListmanageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpListmanageLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(jpListmanageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnShowEditList, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jpListmanageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpListmanageLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jpListmanageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jpListmanageLayout.createSequentialGroup()
-                                .addGap(48, 48, 48)
-                                .addComponent(btnShowDeleteValidation, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(170, 170, 170)
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jpListmanageLayout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addGroup(jpListmanageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jpTableMoviesInList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpListmanageLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnShowCreateList, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(70, Short.MAX_VALUE))
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jpListmanageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnShowCreateList, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnShowEditList, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnShowDeleteValidation, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         jpListmanageLayout.setVerticalGroup(
             jpListmanageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpListmanageLayout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addGroup(jpListmanageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1)
+                .addGap(17, 17, 17)
+                .addComponent(jLabel12)
+                .addGap(18, 18, 18)
+                .addGroup(jpListmanageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpListmanageLayout.createSequentialGroup()
                         .addComponent(btnShowCreateList, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnShowEditList, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
-                        .addComponent(btnShowDeleteValidation, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(312, 312, 312))
+                        .addComponent(btnShowDeleteValidation, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(43, 43, 43)
+                .addComponent(jpTableMoviesInList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
+
+        jpStart.setBackground(new java.awt.Color(167, 167, 255));
+        jpStart.setMinimumSize(new java.awt.Dimension(550, 530));
+        jpStart.setPreferredSize(new java.awt.Dimension(550, 530));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/popcorn.png"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -699,7 +760,7 @@ public class MainMenuApp extends javax.swing.JFrame {
                                 .addGap(22, 22, 22)
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(89, 89, 89)))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         jpStartLayout.setVerticalGroup(
             jpStartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -710,7 +771,22 @@ public class MainMenuApp extends javax.swing.JFrame {
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
+        );
+
+        jpStatistika.setBackground(new java.awt.Color(167, 167, 255));
+        jpStatistika.setMinimumSize(new java.awt.Dimension(550, 530));
+        jpStatistika.setPreferredSize(new java.awt.Dimension(550, 530));
+
+        javax.swing.GroupLayout jpStatistikaLayout = new javax.swing.GroupLayout(jpStatistika);
+        jpStatistika.setLayout(jpStatistikaLayout);
+        jpStatistikaLayout.setHorizontalGroup(
+            jpStatistikaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 550, Short.MAX_VALUE)
+        );
+        jpStatistikaLayout.setVerticalGroup(
+            jpStatistikaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 530, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
@@ -719,13 +795,17 @@ public class MainMenuApp extends javax.swing.JFrame {
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jLayeredPane1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jpListmanage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jpListmanage, javax.swing.GroupLayout.DEFAULT_SIZE, 555, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jpStart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jpStart, javax.swing.GroupLayout.DEFAULT_SIZE, 579, Short.MAX_VALUE))
             .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jLayeredPane1Layout.createSequentialGroup()
                     .addComponent(jpSearchMovies, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 29, Short.MAX_VALUE)))
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                    .addComponent(jpStatistika, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 29, Short.MAX_VALUE)))
         );
         jLayeredPane1Layout.setVerticalGroup(
@@ -741,11 +821,16 @@ public class MainMenuApp extends javax.swing.JFrame {
             .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jLayeredPane1Layout.createSequentialGroup()
                     .addComponent(jpSearchMovies, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 16, Short.MAX_VALUE)))
+                    .addGap(0, 34, Short.MAX_VALUE)))
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                    .addComponent(jpStatistika, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 34, Short.MAX_VALUE)))
         );
         jLayeredPane1.setLayer(jpSearchMovies, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jpListmanage, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(jpStart, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jpStatistika, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -770,9 +855,11 @@ public class MainMenuApp extends javax.swing.JFrame {
 
     private void btnManageListsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnManageListsActionPerformed
         // TODO add your handling code here:
+        this.bindFavoriteList();
         this.jpListmanage.setVisible(true);
         this.jpStart.setVisible(false);
         this.jpSearchMovies.setVisible(false);
+        this.jpTableMoviesInList.setVisible(false);
     }//GEN-LAST:event_btnManageListsActionPerformed
 
     private void btnDiscoverMoviesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDiscoverMoviesActionPerformed
@@ -784,7 +871,6 @@ public class MainMenuApp extends javax.swing.JFrame {
         this.jpStart.setVisible(false);
         this.jcbGenre.setSelectedIndex(-1); 
         this.jcbFavoriteListSelection.setSelectedIndex(-1);
-        this.btnAddToList.setEnabled(false);
         this.jtfselectedYear.setText(null);
         this.jpTableMovies.setVisible(false);
         this.labelNoCriteria.setVisible(false);
@@ -792,6 +878,10 @@ public class MainMenuApp extends javax.swing.JFrame {
 
     private void btnMoviesStatisticsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoviesStatisticsActionPerformed
         // TODO add your handling code here:
+        this.jpStatistika.setVisible(true);
+        this.jpStart.setVisible(false);
+        this.jpListmanage.setVisible(false);
+        this.jpSearchMovies.setVisible(false);
     }//GEN-LAST:event_btnMoviesStatisticsActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
@@ -806,8 +896,7 @@ public class MainMenuApp extends javax.swing.JFrame {
         this.jpListmanage.setVisible(false);
         this.jpSearchMovies.setVisible(false);
         
-        this.jfLoading.setVisible(true);
-        this.jfLoading.setLocationRelativeTo(null);
+       
         APIconnection api = new APIconnection();
         api.clearMovies();
         try {  
@@ -816,7 +905,12 @@ public class MainMenuApp extends javax.swing.JFrame {
         } catch (ParseException ex) {
             
         }
-        this.jfLoading.setVisible(false);
+        
+        this.jfLoading.setVisible(true);
+        this.jfLoading.setLocationRelativeTo(null);
+        
+        
+        
     }//GEN-LAST:event_btnGetMoviesActionPerformed
 
     private void btnShowCreateListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnShowCreateListActionPerformed
@@ -879,6 +973,8 @@ public class MainMenuApp extends javax.swing.JFrame {
         FavoriteList favList = (FavoriteList) this.jlFavoriteList.getSelectedValue();
         this.selectedListId = favList.getId();
         this.btnShowDeleteValidation.setEnabled(true);
+        this.bindTblList();
+        this.jpTableMoviesInList.setVisible(true);
         
     }//GEN-LAST:event_jlFavoriteListMouseClicked
 
@@ -908,6 +1004,7 @@ public class MainMenuApp extends javax.swing.JFrame {
         this.btnShowDeleteValidation.setEnabled(false);
         this.btnShowEditList.setEnabled(false);
         this.jlFavoriteList.clearSelection();
+        this.jpTableMoviesInList.setVisible(false);
     }//GEN-LAST:event_btnDeleteYesActionPerformed
 
     private void btnDeleteCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteCancelActionPerformed
@@ -931,28 +1028,6 @@ public class MainMenuApp extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnShowDeleteValidationActionPerformed
 
-    private void btnAddToListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddToListActionPerformed
-        // TODO add your handling code here:
-        if(this.jcbFavoriteListSelection.getSelectedIndex() == -1){
-            System.out.println("Adeia lista");
-        }else {
-            System.out.println("lista" + this.jcbFavoriteListSelection.getSelectedItem());
-            MovieJpaController controller = new MovieJpaController(emf);
-            Movie movie = controller.findMovie(this.selectedMovieId);
-            movie.setFavoriteListId((FavoriteList) this.jcbFavoriteListSelection.getSelectedItem());
-            try {
-                controller.edit(movie);
-            } catch (Exception ex) {
-                Logger.getLogger(MainMenuApp.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            this.btnAddToList.setEnabled(false);
-            this.bindTblMoviesFind();
-            this.jcbFavoriteListSelection.setSelectedIndex(-1);
-            this.tblMoviesFind.clearSelection();
-            
-        }
-    }//GEN-LAST:event_btnAddToListActionPerformed
-
     private void btnSearchMoviesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchMoviesActionPerformed
         // TODO add your handling code here:    
         if((this.jcbGenre.getSelectedIndex() == -1) || (this.jtfselectedYear.getText().isEmpty())){
@@ -962,9 +1037,7 @@ public class MainMenuApp extends javax.swing.JFrame {
             this.labelNoCriteria.setVisible(false);
             this.bindTblMoviesFind();
             this.jpTableMovies.setVisible(true);
-        }
-        
-        
+        }                     
     }//GEN-LAST:event_btnSearchMoviesActionPerformed
 
     private void btnClearCriteriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClearCriteriaActionPerformed
@@ -976,16 +1049,19 @@ public class MainMenuApp extends javax.swing.JFrame {
 
     private void tblMoviesFindMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblMoviesFindMouseClicked
         // TODO add your handling code here:
-        this.btnAddToList.setEnabled(false);
+         this.jcbFavoriteListSelection.setSelectedIndex(-1);
+        
         this.btnDeleteFromList.setEnabled(false);
+        
         MovieJpaController controller = new MovieJpaController(emf);
        int selectedNum = this.tblMoviesFind.getSelectedRowCount();
        if (selectedNum == 1){
            int rowNum = this.tblMoviesFind.getSelectedRow();
           this.selectedMovieId = Integer.parseInt(this.tblMoviesFind.getValueAt(rowNum, 0).toString());
            Movie selectedMovie = controller.findMovie(selectedMovieId);
+           
            if(selectedMovie.getFavoriteListId() == null){
-               this.btnAddToList.setEnabled(true);
+               this.jcbFavoriteListSelection.setEnabled(true);
            }else {
                this.btnDeleteFromList.setEnabled(true);
                this.jcbFavoriteListSelection.setSelectedItem(selectedMovie.getFavoriteListId());
@@ -1008,6 +1084,31 @@ public class MainMenuApp extends javax.swing.JFrame {
             this.btnDeleteFromList.setEnabled(false);
             this.jcbFavoriteListSelection.setSelectedIndex(-1);
     }//GEN-LAST:event_btnDeleteFromListActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.jfLoading.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jcbFavoriteListSelectionItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jcbFavoriteListSelectionItemStateChanged
+        // TODO add your handling code here:
+        
+        if(this.jcbFavoriteListSelection.getSelectedIndex() == -1){
+            
+        }else {
+            
+            MovieJpaController controller = new MovieJpaController(emf);
+            Movie movie = controller.findMovie(this.selectedMovieId);
+            movie.setFavoriteListId((FavoriteList) this.jcbFavoriteListSelection.getSelectedItem());
+            try {
+                controller.edit(movie);
+            } catch (Exception ex) {
+                Logger.getLogger(MainMenuApp.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            this.bindTblMoviesFind();
+                      
+        }
+    }//GEN-LAST:event_jcbFavoriteListSelectionItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -1102,9 +1203,30 @@ public class MainMenuApp extends javax.swing.JFrame {
         }
         this.tblMoviesFind.setModel(model);   
     }
+    
+    public void bindTblList(){
+        FavoriteListJpaController listcontroller = new FavoriteListJpaController(emf);
+        
+        MovieJpaController controller = new MovieJpaController(emf);
+        FavoriteList favList = listcontroller.findFavoriteList(this.selectedListId);
+        List<Movie> movList = controller.findMovieByList(favList);
+        
+        String[] newIdentifiers = { "Id", "Τίτλος Ταινίας", "Βαθμολογία", "Περιγραφή" };
+        DefaultTableModel model = new DefaultTableModel();
+        model.setColumnIdentifiers(newIdentifiers);
+        for(Movie movie : movList){
+            model.addRow(new String[] {
+                movie.getId().toString(),
+                movie.getTitle(),
+                movie.getRating().toString(),
+                movie.getOverview()
+            });
+        }
+        this.tblMoviesInList.setModel(model);
+        //String listId = this.selectedListId.toString();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAddToList;
     private javax.swing.JButton btnClearCriteria;
     private javax.swing.JButton btnCreateCancel;
     private javax.swing.JButton btnCreateList;
@@ -1122,7 +1244,11 @@ public class MainMenuApp extends javax.swing.JFrame {
     private javax.swing.JButton btnShowCreateList;
     private javax.swing.JButton btnShowDeleteValidation;
     private javax.swing.JButton btnShowEditList;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -1137,6 +1263,7 @@ public class MainMenuApp extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JComboBox jcbFavoriteListSelection;
     private javax.swing.JComboBox jcbGenre;
     private javax.swing.JFrame jfCreateList;
@@ -1149,13 +1276,15 @@ public class MainMenuApp extends javax.swing.JFrame {
     private javax.swing.JPanel jpListmanage;
     private javax.swing.JPanel jpSearchMovies;
     private javax.swing.JPanel jpStart;
+    private javax.swing.JPanel jpStatistika;
     private javax.swing.JPanel jpTableMovies;
-    private javax.swing.JPanel jploading;
+    private javax.swing.JPanel jpTableMoviesInList;
     private javax.swing.JTextField jtfChangeName;
     private javax.swing.JTextField jtfNewName;
     private javax.swing.JTextField jtfselectedYear;
     private javax.swing.JLabel labelNoCriteria;
     private javax.swing.JTable tblMoviesFind;
+    private javax.swing.JTable tblMoviesInList;
     // End of variables declaration//GEN-END:variables
     int selectedListId;
     int selectedMovieId;

@@ -73,9 +73,9 @@ public class APIconnection {
     }
     
     public void getMovies() throws ParseException{
-        for (int i = 1; i<77; i++){
+        for (int i = 1; i<41; i++){
             try {
-                this.url = new URL( baseURL + "discover/movie?api_key=" + api_key +"&language=en-US&sort_by=popularity.desc&release_date.gte=2000&with_genres=28%7C878%7C10749&page=" + i);
+                this.url = new URL( baseURL + "discover/movie?api_key=" + api_key +"&language=en-US&sort_by=popularity.desc&primary_release_date.gte=2000-01-01&with_genres=28%7C878%7C10749&page=" + i);
             } catch (MalformedURLException ex) {
                 Logger.getLogger(APIconnection.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -87,7 +87,7 @@ public class APIconnection {
             JsonArray results = obj.getJsonArray("results");
 
             for (JsonObject result : results.getValuesAs(JsonObject.class)) {
-                // Set Id
+                    // Set Id
                     mov.setId(result.getInt("id"));
                     // Set Title
                     mov.setTitle(result.getString("title"));

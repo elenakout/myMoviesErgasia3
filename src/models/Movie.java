@@ -41,7 +41,7 @@ import javax.persistence.Transient;
         ,@NamedQuery(name = "Movie.onlyYear", query = "SELECT m FROM Movie m WHERE m.releaseDate > :year")
         ,@NamedQuery(name = "Movie.betweenYear", query = "SELECT m FROM Movie m WHERE m.releaseDate BETWEEN :startDate AND :endDate")
         ,@NamedQuery(name = "Movie.findByGenre", query = "SELECT m FROM Movie m WHERE m.genreId = :genre")
-       // ,@NamedQuery(name = "Movie.findGrtDate", query = "SELECT m FROM m WHERE m.releaseDate > :date")
+        ,@NamedQuery(name = "Movie.findByList", query ="SELECT m FROM Movie m WHERE m.favoriteListId = :list")
 })
 public class Movie implements Serializable {
     @Transient
