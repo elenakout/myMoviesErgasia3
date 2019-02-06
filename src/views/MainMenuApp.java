@@ -110,6 +110,12 @@ public class MainMenuApp extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jpStatistika = new javax.swing.JPanel();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tblBestMovies = new javax.swing.JTable();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tblBestMoviesByList = new javax.swing.JTable();
 
         jfLoading.setTitle("Loading");
         jfLoading.setMinimumSize(new java.awt.Dimension(450, 200));
@@ -484,7 +490,7 @@ public class MainMenuApp extends javax.swing.JFrame {
             }
         });
 
-        btnClearCriteria.setText("Καθαρισμός");
+        btnClearCriteria.setText("Καθαρισμός Κριτηρίων");
         btnClearCriteria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClearCriteriaActionPerformed(evt);
@@ -516,7 +522,7 @@ public class MainMenuApp extends javax.swing.JFrame {
             }
         });
 
-        btnDeleteFromList.setText("Διαγραφή από Λίστα");
+        btnDeleteFromList.setText("Αφαίρεση από Λίστα");
         btnDeleteFromList.setEnabled(false);
         btnDeleteFromList.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -706,7 +712,7 @@ public class MainMenuApp extends javax.swing.JFrame {
                                     .addComponent(btnShowCreateList, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnShowEditList, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(btnShowDeleteValidation, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         jpListmanageLayout.setVerticalGroup(
             jpListmanageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -778,15 +784,74 @@ public class MainMenuApp extends javax.swing.JFrame {
         jpStatistika.setMinimumSize(new java.awt.Dimension(550, 530));
         jpStatistika.setPreferredSize(new java.awt.Dimension(550, 530));
 
+        jButton2.setText("Οι Καλύτερες 10 Ταινίες");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("Οι Καλύτερες Ταινίες ανά Λίστα");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        tblBestMovies.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane4.setViewportView(tblBestMovies);
+
+        tblBestMoviesByList.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane5.setViewportView(tblBestMoviesByList);
+
         javax.swing.GroupLayout jpStatistikaLayout = new javax.swing.GroupLayout(jpStatistika);
         jpStatistika.setLayout(jpStatistikaLayout);
         jpStatistikaLayout.setHorizontalGroup(
             jpStatistikaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 550, Short.MAX_VALUE)
+            .addGroup(jpStatistikaLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(jpStatistikaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
+
+        jpStatistikaLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton2, jButton3});
+
         jpStatistikaLayout.setVerticalGroup(
             jpStatistikaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 530, Short.MAX_VALUE)
+            .addGroup(jpStatistikaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton2)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17)
+                .addComponent(jButton3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
@@ -859,7 +924,7 @@ public class MainMenuApp extends javax.swing.JFrame {
         this.jpListmanage.setVisible(true);
         this.jpStart.setVisible(false);
         this.jpSearchMovies.setVisible(false);
-        this.jpTableMoviesInList.setVisible(false);
+        //this.jpTableMoviesInList.setVisible(false);
     }//GEN-LAST:event_btnManageListsActionPerformed
 
     private void btnDiscoverMoviesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDiscoverMoviesActionPerformed
@@ -874,6 +939,7 @@ public class MainMenuApp extends javax.swing.JFrame {
         this.jtfselectedYear.setText(null);
         this.jpTableMovies.setVisible(false);
         this.labelNoCriteria.setVisible(false);
+        this.jpStatistika.setVisible(false);
     }//GEN-LAST:event_btnDiscoverMoviesActionPerformed
 
     private void btnMoviesStatisticsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoviesStatisticsActionPerformed
@@ -1110,6 +1176,16 @@ public class MainMenuApp extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jcbFavoriteListSelectionItemStateChanged
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        this.bindTblBestMovies();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        this.bindTblBestMoviesByList();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1204,7 +1280,7 @@ public class MainMenuApp extends javax.swing.JFrame {
         this.tblMoviesFind.setModel(model);   
     }
     
-    public void bindTblList(){
+    public DefaultTableModel bindTblList(){
         FavoriteListJpaController listcontroller = new FavoriteListJpaController(emf);
         
         MovieJpaController controller = new MovieJpaController(emf);
@@ -1223,7 +1299,48 @@ public class MainMenuApp extends javax.swing.JFrame {
             });
         }
         this.tblMoviesInList.setModel(model);
+        return model;
         //String listId = this.selectedListId.toString();
+    }
+    
+    public void bindTblBestMoviesByList(){
+       FavoriteListJpaController listcontroller = new FavoriteListJpaController(emf);
+       List<FavoriteList> favList = listcontroller.findFavoriteListEntities();
+       MovieJpaController movcontroller = new MovieJpaController(emf);       
+       
+        String[] newIdentifiers = { "Λίστα", "Τίτλος Ταινίας" };
+        DefaultTableModel model = new DefaultTableModel();
+        model.setColumnIdentifiers(newIdentifiers);
+        for(FavoriteList list : favList){
+            List<Movie> movList = movcontroller.findMovieByListBestRating(list);
+            for(Movie movie : movList){
+                model.addRow(new String[]{
+                    list.getName(),
+                    movie.getTitle()
+                });
+            }          
+        }
+        this.tblBestMoviesByList.setModel(model);
+        
+       
+    
+    }
+    
+    public void bindTblBestMovies(){
+        MovieJpaController controller = new MovieJpaController(emf);
+        List<Movie> movList = controller.findBestMovies();
+        DefaultTableModel model = new DefaultTableModel();
+        String[] newIdentifiers = {"Τίτλος Ταινίας", "Βαθμολογία"};
+        
+        model.setColumnIdentifiers(newIdentifiers);
+        for(Movie movie : movList){
+            model.addRow(new String[] {
+                movie.getTitle(),
+                movie.getRating().toString()
+            });
+        }
+        this.tblBestMovies.setModel(model);
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1245,6 +1362,8 @@ public class MainMenuApp extends javax.swing.JFrame {
     private javax.swing.JButton btnShowDeleteValidation;
     private javax.swing.JButton btnShowEditList;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1264,6 +1383,8 @@ public class MainMenuApp extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JComboBox jcbFavoriteListSelection;
     private javax.swing.JComboBox jcbGenre;
     private javax.swing.JFrame jfCreateList;
@@ -1283,6 +1404,8 @@ public class MainMenuApp extends javax.swing.JFrame {
     private javax.swing.JTextField jtfNewName;
     private javax.swing.JTextField jtfselectedYear;
     private javax.swing.JLabel labelNoCriteria;
+    private javax.swing.JTable tblBestMovies;
+    private javax.swing.JTable tblBestMoviesByList;
     private javax.swing.JTable tblMoviesFind;
     private javax.swing.JTable tblMoviesInList;
     // End of variables declaration//GEN-END:variables

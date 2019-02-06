@@ -254,5 +254,21 @@ public class MovieJpaController implements Serializable {
        
         return results;
     }
+    
+    public List<Movie> findMovieByListBestRating(FavoriteList list){
+        EntityManager em = getEntityManager(); 
+        Query query = em.createNamedQuery("Movie.findByList").setParameter("list", list).setMaxResults(1);
+        
+        return query.getResultList();
+        
+    }
+    
+    public List<Movie> findBestMovies(){
+        EntityManager em = getEntityManager();
+        Query query = em.createNamedQuery("Movie.bestMovies").setMaxResults(10);
+        List<Movie> results = query.getResultList();
+        
+        return results;
+    }
 
 }

@@ -38,10 +38,10 @@ import javax.persistence.Transient;
     @NamedQuery(name = "Movie.findByRating", query = "SELECT m FROM Movie m WHERE m.rating = :rating"),
     @NamedQuery(name = "Movie.findByOverview", query = "SELECT m FROM Movie m WHERE m.overview = :overview")
         ,@NamedQuery(name = "Movie.deleteAll", query = "DELETE  FROM Movie  WHERE 1=1")
-        ,@NamedQuery(name = "Movie.onlyYear", query = "SELECT m FROM Movie m WHERE m.releaseDate > :year")
         ,@NamedQuery(name = "Movie.betweenYear", query = "SELECT m FROM Movie m WHERE m.releaseDate BETWEEN :startDate AND :endDate")
         ,@NamedQuery(name = "Movie.findByGenre", query = "SELECT m FROM Movie m WHERE m.genreId = :genre")
-        ,@NamedQuery(name = "Movie.findByList", query ="SELECT m FROM Movie m WHERE m.favoriteListId = :list")
+        ,@NamedQuery(name = "Movie.findByList", query ="SELECT m FROM Movie m WHERE m.favoriteListId = :list ORDER BY m.rating DESC")
+        ,@NamedQuery(name = "Movie.bestMovies", query = "SELECT m FROM Movie m ORDER BY m.rating DESC")
 })
 public class Movie implements Serializable {
     @Transient
